@@ -1,0 +1,21 @@
+{
+  "name": "extension-qa-dashboard-extension",
+  "provider": "Michael Irwin",
+  "icon": "docker.svg",
+  "vm": {
+    "composefile": "docker-compose.extension.yaml",
+    "exposes": {
+      "socket": "app.sock"
+    }
+  },
+  "ui": {
+    "dashboard-tab": {
+      "title": "Extension QA",
+      "src": "index.html",
+      "root": "ui",
+      "backend": {
+        "socket": "app.sock"
+      }
+    }
+  }
+}

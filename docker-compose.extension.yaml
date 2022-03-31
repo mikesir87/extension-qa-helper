@@ -1,0 +1,3 @@
+services:
+  demo-extension:
+    image: ${DESKTOP_PLUGIN_IMAGE}
