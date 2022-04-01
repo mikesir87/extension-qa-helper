@@ -36,6 +36,6 @@ LABEL org.opencontainers.image.title="Extensions QA Switcher" \
 COPY --from=builder /backend/bin/service /
 COPY docker-compose.extension.yaml .
 COPY metadata.json .
-COPY docker.svg .
+COPY flask.svg .
 COPY --from=client-builder /ui/build ui
 CMD /service -socket /run/guest-services/app.sock

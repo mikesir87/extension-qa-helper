@@ -1,7 +1,7 @@
 {
   "name": "extension-qa-dashboard-extension",
   "provider": "Michael Irwin",
-  "icon": "docker.svg",
+  "icon": "flask.svg",
   "vm": {
     "composefile": "docker-compose.extension.yaml",
     "exposes": {

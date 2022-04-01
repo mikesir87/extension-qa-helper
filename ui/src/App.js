@@ -1,14 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { DockerMuiThemeProvider } from '@docker/docker-mui-theme';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ExtensionInput } from './ExtensionInput/ExtensionInput';
 import { VersionList } from './Versions/VersionList';
+import { VersionsProvider } from './Versions/VersionsProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <VersionsProvider>
+      <DockerMuiThemeProvider>
+        <CssBaseline />
+        <ExtensionInput />
         <VersionList />
-      </header>
-    </div>
+      </DockerMuiThemeProvider>
+    </VersionsProvider>
   );
 }
 

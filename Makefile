@@ -1,4 +1,4 @@
-IMAGE?=mikesir87/extension-qa-dashboard-extension
+IMAGE?=mikesir87/extension-qa-helper
 
 BUILDER=buildx-multi-arch
 
@@ -20,7 +20,7 @@ prepare-buildx: ## Create buildx builder for multi-arch build, if not exists
 	docker buildx inspect $(BUILDER) || docker buildx create --name=$(BUILDER) --driver=docker-container --driver-opt=network=host
 
 push-extension: prepare-buildx ## Build & Upload extension image to hub. Do not push if tag already exists: make push-extension tag=0.1
-	docker pull $(IMAGE):$(tag) && echo "Failure: Tag already exists" || docker buildx build --push --builder=$(BUILDER) --platform=linux/amd64,linux/arm64 --build-arg TAG=${tag)} --tag=$(IMAGE):$(tag) .
+	docker buildx build --push --builder=$(BUILDER) --platform=linux/amd64,linux/arm64 --build-arg TAG=${tag)} --tag=$(IMAGE):$(tag) .
 
 dev-up: extension
 	docker extension install $(IMAGE) || docker extension update $(IMAGE)

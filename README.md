@@ -1,4 +1,15 @@
-# Extension Demo
+# Extension QA Helper
+
+This project provides a small dashboard to view the available tags for an extension and provide an easy mechanism to switch between various tags. This can be super helpful for QA or acceptance testing, where testers may not want to drop into the CLI to change versions.
+
+## Installation
+
+In order to use this, you will need to have a version of Docker Desktop installed that supports extensions. Once you've done so, you can run the following to install the extension:
+
+```
+docker extension install mikesir87/extension-qa-helper
+```
+
 
 ## Development
 
@@ -24,4 +35,3 @@ When you're done, simply run the following to tear it all down and revert the UI
 ```
 make dev-down
 ```
-
